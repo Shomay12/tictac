@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TicTac Arena</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="fx"></canvas>
+  <main class="shell">
+    <h1>TicTac Arena</h1>
+    <p class="subtitle">Multiplayer neon showdown</p>
+
+    <section class="lobby card" id="lobby">
+      <input id="nickname" placeholder="Nickname" maxlength="20" />
+      <input id="room" placeholder="Room code (e.g. arena)" maxlength="20" />
+      <button id="joinBtn">Join Battle</button>
+    </section>
+
+    <section class="hud card hidden" id="hud">
+      <div><strong>Room:</strong> <span id="roomLabel"></span></div>
+      <div><strong>You:</strong> <span id="you"></span></div>
+      <div><strong>Turn:</strong> <span id="turn"></span></div>
+      <div class="score">X <span id="sx">0</span> : <span id="so">0</span> O</div>
+    </section>
+
+    <section class="board-wrap card hidden" id="game">
+      <div id="board" class="board"></div>
+      <p id="status">Waiting for players...</p>
+      <button id="nextBtn" class="hidden">Next Round</button>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
